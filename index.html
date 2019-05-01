@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
+
+    <script>
+        function showData() {
+            var data = {
+                name: "Luke"
+            };
+
+            var template = $('#template').html();
+            Mustache.parse(template);
+            var rendered = Mustache.render(template, data);
+            $('#target').html(rendered);
+        }
+    </script>
+</head>
+
+<body onload="showData()">
+    <div id="target">Loading...</div>
+    <script id="template" type="x-tmpl-mustache">
+        Hello {{ name }}!
+    </script>
+</body>
+
+</html>
