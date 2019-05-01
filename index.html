@@ -5,25 +5,22 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
 
-    <script>
-        function showData() {
-            var data = {
-                name: "Luke"
-            };
-
-            var template = $('#template').html();
-            Mustache.parse(template);
-            var rendered = Mustache.render(template, data);
-            $('#target').html(rendered);
-        }
-    </script>
+    <script src="main.js"></script>
 </head>
 
 <body onload="showData()">
-    <div id="target">Loading...</div>
-    <script id="template" type="x-tmpl-mustache">
-        Hello {{ name }}!
-    </script>
+    <h1>Shows</h1>
+
+    <div id="target-output">Loading...</div>
+    <script id="shows" type="text/template">
+        {{#shows}}
+            <ul>
+                <li><strong>Title:</strong> {{title}}</li>
+                <li><strong>Description:</strong> {{{description}}}</li>
+                <li><strong>Category:</strong> {{category}}</li>
+            </ul>
+		{{/shows}}
+	</script>
 </body>
 
 </html>
