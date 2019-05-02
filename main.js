@@ -44,7 +44,7 @@ function getData() {
     getJson(url)
         .then(function (data) {
             for (const item of data) {
-                console.log()
+                console.log(item)
             }
         });
 }
