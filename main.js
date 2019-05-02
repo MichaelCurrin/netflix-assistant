@@ -1,24 +1,30 @@
 const API_BASE_URL = 'https://api.reelgood.com/v2/browse/source/netflix?sort=4&sources=netflix&take=250';
 const IMG_BASE_URL = 'https://img.reelgood.com/content';
+const IMG_PLACEHOLDER_BASE_URL = 'https://via.placeholder.com';
 const TV = 'show';
 const MOVIE = 'movie';
 
 
-function imageUrl(type, id_, large = true) {
-    var width = large ? 342 : 92;
-    return `${IMG_BASE_URL}/${type}/${id_}/poster-${width}.webp`
+function makeImageUrl(hasPoster, type, id_, large = true) {
+    var pixels = large ? 342 : 92;
+    if (hasPoster) {
+        return `${IMG_BASE_URL}/${type}/${id_}/poster-${pixels}.webp`;
+    } else {
+        return `${IMG_PLACEHOLDER_BASE_URL}/${pixels}`;
+    }
 }
 
 
 function parse(item) {
     var is_movie = item.content_type == 'm';
     var type = is_movie ? MOVIE : TV;
-    var id = item.id;
+    var id_ = item.id;
+    var imageUrl = makeImageUrl(item.has_poster, type, id_);
 
     return {
-        id: id,
+        id: id_,
         type: type,
-        img: imageUrl(type, id),
+        image_url: imageUrl,
         slug: item.slug,
         title: item.title,
         overview: item.overview,
