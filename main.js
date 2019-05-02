@@ -1,6 +1,6 @@
 const API_BASE_URL = 'https://api.reelgood.com/v2/browse/source/netflix?sort=4&sources=netflix&take=250';
 const IMG_BASE_URL = 'https://img.reelgood.com/content';
-const SHOW = 'show';
+const TV = 'show';
 const MOVIE = 'movie';
 
 
@@ -12,7 +12,7 @@ function imageUrl(type, id_, large = true) {
 
 function parse(item) {
     var is_movie = item.content_type == 'm';
-    var type = is_movie ? MOVIE : SHOW;
+    var type = is_movie ? MOVIE : TV;
     var id = item.id;
 
     return {
@@ -40,32 +40,18 @@ function getJson(url) {
 
 function getData() {
     var url = API_BASE_URL;
-
-    getJson(url)
-        .then(function (data) {
-            for (const item of data) {
-                console.log(item)
-            }
-        });
+    return getJson(url);
 }
 
 
 function render() {
-    var template = $("#shows").html();
-    var shows = {
-        "shows": [
-            {
-                "category": "children",
-                "description": "<a href='#'>A show</a> about a cake",
-                "title": "Strawberry Shortcake",
-            },
-            {
-                "category": "children",
-                "description": "A show about a ice",
-                "title": "Vanilla Ice",
+    getData()
+        .then(function (data) {
+            var content = {
+                "shows": data
             }
-        ]
-    };
-    var html = Mustache.to_html(template, shows);
-    $('#target-output').html(html);
+            var template = $("#shows").html();
+            var html = Mustache.to_html(template, content);
+            $('#target-output').html(html);
+        })
 }
