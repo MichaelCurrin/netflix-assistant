@@ -7,10 +7,11 @@ const MOVIE = 'movie';
 
 function makeImageUrl(hasPoster, type, id_, large = true) {
     var pixels = large ? 342 : 92;
+
     if (hasPoster) {
         return `${IMG_BASE_URL}/${type}/${id_}/poster-${pixels}.webp`;
     } else {
-        return `${IMG_PLACEHOLDER_BASE_URL}/${pixels}`;
+        return `${IMG_PLACEHOLDER_BASE_URL}/${pixels}x${pixels*1.5}?text=No+image`;
     }
 }
 
