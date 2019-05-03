@@ -6,7 +6,7 @@ const TV = 'show';
 const MOVIE = 'movie';
 
 
-function makeImageUrl(hasPoster, type, id, large = true) {
+function makeImageUrl(hasPoster, type, id, large) {
     var pixels = large ? 342 : 92;
 
     if (hasPoster) {
@@ -21,12 +21,14 @@ function parseShow(show) {
     var isMovie = show.content_type == 'm';
     var type = isMovie ? MOVIE : TV;
     var id = show.id;
-    var imageUrl = makeImageUrl(show.has_poster, type, id);
+    var imgLarge = makeImageUrl(show.has_poster, type, id, true);
+    var imgSmall = makeImageUrl(show.has_poster, type, id, false);
 
     return {
         id: id,
         type: type,
-        image_url: imageUrl,
+        image_large: imgLarge,
+        image_small: imgSmall,
         slug: show.slug,
         title: show.title,
         overview: show.overview,
