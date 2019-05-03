@@ -37,19 +37,11 @@ function parse(item) {
 }
 
 
-function getJson(url) {
-    return new Promise(function (resolve) {
-        fetch(url)
-            .then(body => body.json())
-            .then(result => result.map(parse))
-            .then(parsedItems => resolve(parsedItems));
-    })
-}
-
-
 function getData() {
     var url = API_BASE_URL;
-    return getJson(url);
+
+    return $.getJSON(url)
+        .then(result => result.map(parseShow))
 }
 
 
