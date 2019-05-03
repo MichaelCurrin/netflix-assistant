@@ -6,33 +6,33 @@ const TV = 'show';
 const MOVIE = 'movie';
 
 
-function makeImageUrl(hasPoster, type, id_, large = true) {
+function makeImageUrl(hasPoster, type, id, large = true) {
     var pixels = large ? 342 : 92;
 
     if (hasPoster) {
-        return `${IMG_BASE_URL}/${type}/${id_}/poster-${pixels}.webp`;
+        return `${IMG_BASE_URL}/${type}/${id}/poster-${pixels}.webp`;
     } else {
         return `${IMG_PLACEHOLDER_BASE_URL}/${pixels}x${pixels*1.5}?text=No+image`;
     }
 }
 
 
-function parse(item) {
-    var is_movie = item.content_type == 'm';
-    var type = is_movie ? MOVIE : TV;
-    var id_ = item.id;
-    var imageUrl = makeImageUrl(item.has_poster, type, id_);
+function parseShow(show) {
+    var isMovie = show.content_type == 'm';
+    var type = isMovie ? MOVIE : TV;
+    var id = show.id;
+    var imageUrl = makeImageUrl(show.has_poster, type, id);
 
     return {
-        id: id_,
+        id: id,
         type: type,
         image_url: imageUrl,
-        slug: item.slug,
-        title: item.title,
-        overview: item.overview,
-        released_on: item.released_on,
-        genres: item.genres,
-        season_count: item.season_count,
+        slug: show.slug,
+        title: show.title,
+        overview: show.overview,
+        released_on: show.released_on,
+        genres: show.genres,
+        season_count: show.season_count,
     };
 }
 
