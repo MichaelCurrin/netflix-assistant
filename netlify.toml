@@ -1,0 +1,3 @@
+[[headers]]
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
