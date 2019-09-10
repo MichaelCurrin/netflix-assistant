@@ -1,5 +1,4 @@
-const CORS_PREFIX = 'https://cors.io/';
-const API_BASE_URL = `${CORS_PREFIX}?https://api.reelgood.com/v2/browse/source/netflix?sort=4&sources=netflix&take=250`;
+const API_BASE_URL = `https://api.reelgood.com/v2/browse/source/netflix?sort=4&sources=netflix&take=250`;
 const IMG_BASE_URL = 'https://img.reelgood.com/content';
 const IMG_PLACEHOLDER_BASE_URL = 'https://via.placeholder.com';
 const TV = 'show';
