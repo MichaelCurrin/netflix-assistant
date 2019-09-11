@@ -43,13 +43,13 @@ function getData() {
 
     $.ajax({ url: API_BASE_URL, crossDomain: true }).then(result => console.log(result));
 
-    $.getJSON({
-        url: API_BASE_URL,
-        headers: {
-            "accept": "application/json",
-            "Access-Control-Allow-Origin": "*"
-        }
-    }).then(result => console.log(result));
+    // $.getJSON({
+    //     url: API_BASE_URL,
+    //     headers: {
+    //         "accept": "application/json",
+    //         "Access-Control-Allow-Origin": "*"
+    //     }
+    // }).then(result => console.log(result));
 
     return $.getJSON(url)
         .then(result => result.map(parseShow))
