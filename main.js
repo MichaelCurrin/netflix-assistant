@@ -11,7 +11,7 @@ function makeImageUrl(hasPoster, type, id, large) {
     if (hasPoster) {
         return `${IMG_BASE_URL}/${type}/${id}/poster-${pixels}.webp`;
     } else {
-        return `${IMG_PLACEHOLDER_BASE_URL}/${pixels}x${pixels*1.5}?text=No+image`;
+        return `${IMG_PLACEHOLDER_BASE_URL}/${pixels}x${pixels * 1.5}?text=No+image`;
     }
 }
 
@@ -41,9 +41,20 @@ function parseShow(show) {
 function getData() {
     var url = API_BASE_URL;
 
+    $.ajax({ url: API_BASE_URL, crossDomain: true }).then(result => console.log(result));
+
+    $.getJSON({
+        url: API_BASE_URL,
+        headers: {
+            "accept": "application/json",
+            "Access-Control-Allow-Origin": "*"
+        }
+    }).then(result => console.log(result));
+
     return $.getJSON(url)
         .then(result => result.map(parseShow))
 }
+
 
 
 function render() {
