@@ -1,8 +1,8 @@
-const API_BASE_URL = `https://api.reelgood.com/v2/browse/source/netflix?sort=4&sources=netflix&take=250`;
-const IMG_BASE_URL = 'https://img.reelgood.com/content';
-const IMG_PLACEHOLDER_BASE_URL = 'https://via.placeholder.com';
-const TV = 'show';
-const MOVIE = 'movie';
+const API_BASE_URL = `https://api.reelgood.com/v2/browse/source/netflix?sort=4&sources=netflix&take=250`,
+    IMG_BASE_URL = 'https://img.reelgood.com/content',
+    IMG_PLACEHOLDER_BASE_URL = 'https://via.placeholder.com',
+    TV = 'show',
+    MOVIE = 'movie';
 
 
 function makeImageUrl(hasPoster, type, id, large) {
