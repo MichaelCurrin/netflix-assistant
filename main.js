@@ -1,7 +1,9 @@
-const API_BASE_URL = `https://api.reelgood.com/v2/browse/source/netflix?sort=4&sources=netflix&take=250`,
+const API_BASE_URL = 'https://api.reelgood.com/v2',
+    API_QUERY_URL = `${API_BASE_URL}/browse/source/netflix?sort=4&sources=netflix&take=250`,
     IMG_BASE_URL = 'https://img.reelgood.com/content',
-    IMG_PLACEHOLDER_BASE_URL = 'https://via.placeholder.com',
-    TV = 'show',
+    IMG_PLACEHOLDER_BASE_URL = 'https://via.placeholder.com';
+
+const TV = 'show',
     MOVIE = 'movie';
 
 
@@ -10,10 +12,12 @@ function makeImageUrl(hasPoster, type, id, large) {
     var pixels = large ? 342 : 92;
 
     if (hasPoster) {
-        return `${IMG_BASE_URL}/${type}/${id}/poster-${pixels}.webp`;
+        var url = `${IMG_BASE_URL}/${type}/${id}/poster-${pixels}.webp`;
     } else {
-        return `${IMG_PLACEHOLDER_BASE_URL}/${pixels}x${pixels * 1.5}?text=No+image`;
+        var url = `${IMG_PLACEHOLDER_BASE_URL}/${pixels}x${pixels * 1.5}?text=No+image`;
     }
+
+    return url;
 }
 
 
@@ -41,19 +45,7 @@ function parseShow(show) {
 
 
 function getData() {
-    var url = API_BASE_URL;
-
-    $.ajax({ url: API_BASE_URL, crossDomain: true }).then(result => console.log(result));
-
-    // $.getJSON({
-    //     url: API_BASE_URL,
-    //     headers: {
-    //         "accept": "application/json",
-    //         "Access-Control-Allow-Origin": "*"
-    //     }
-    // }).then(result => console.log(result));
-
-    return $.getJSON(url)
+    return $.getJSON(API_QUERY_URL)
         .then(result => result.map(parseShow))
 }
 
@@ -61,12 +53,12 @@ function getData() {
 /** Fetch data and add it to the HTML using templating. **/
 function render() {
     getData()
-        .then(function (data) {
+        .then(data => {
             var content = {
                 "shows": data
             }
             var template = $("#shows").html();
             var html = Mustache.to_html(template, content);
             $('#target-output').html(html);
-        })
+        });
 }
