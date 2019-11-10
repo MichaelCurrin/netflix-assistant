@@ -16,7 +16,7 @@ Open the browser.
 
 ### Remote
 
-This repo can be deployed on Github Pages or Netlify.
+This repo can be deployed on Netlify. The CORS header must be set for API requests and this is not possible on Github Pages.
 
 ## Source of data
 
