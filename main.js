@@ -5,6 +5,7 @@ const API_BASE_URL = `https://api.reelgood.com/v2/browse/source/netflix?sort=4&s
     MOVIE = 'movie';
 
 
+/** Return URL for poster image or placeholder image. **/
 function makeImageUrl(hasPoster, type, id, large) {
     var pixels = large ? 342 : 92;
 
@@ -16,6 +17,7 @@ function makeImageUrl(hasPoster, type, id, large) {
 }
 
 
+/** Extract useful fields from a show and also add image URLs. **/
 function parseShow(show) {
     var isMovie = show.content_type == 'm';
     var type = isMovie ? MOVIE : TV;
@@ -56,7 +58,7 @@ function getData() {
 }
 
 
-
+/** Fetch data and add it to the HTML using templating. **/
 function render() {
     getData()
         .then(function (data) {
