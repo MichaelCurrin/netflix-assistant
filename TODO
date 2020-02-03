@@ -1,0 +1,28 @@
+Note this project used to work on Netlify using a CORS proxy. This no longer works even using an alternate proxy. It still works locally though.
+This may never work remotely as the API does not want to allow cross origin requests (consumption by other services)
+
+
+Alternate approaches to get data
+
+$.ajax({ url: API_QUERY_URL, crossDomain: true }).then(result => console.log(result));
+
+$.getJSON({
+     url: API_QUERY_URL,
+     headers: {
+         "accept": "application/json",
+         "Access-Control-Allow-Origin": "*"
+     }
+ }).then(result => console.log(result));
+
+
+TODO
+
+Fix CORS on Netlify.
+
+Move everything to site directory.
+
+README
+    Navigate to site directory.
+Update config.
+    [build]
+    publish = "site"
