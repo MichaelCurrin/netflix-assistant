@@ -17,12 +17,15 @@ This can also be rebuilt as a server-side app to avoid the CORS errors in the br
 
 ## Sample
 
-![sample](sample.png)
+<div align="center">
+  <img src="sample.png" alt="sample" 
+       width="600" height="600" />
+</div>
 
 
-## Setup and run
+## Setup and run locally
 
-### Local
+### Clone
 
 Clone the repo.
 
@@ -30,9 +33,13 @@ Clone the repo.
 $ git clone git@github.com:MichaelCurrin/netflix-assistant.git
 ```
 
+There are no build or install steps, so contnue.
+
+### Run
+
 Start a web server in the root directory.
 
-Use VS Code Live server (auto reloads).
+Use VS Code Live server (it auto reloads).
 
 Or the command-line. e.g.
 
@@ -44,9 +51,13 @@ Open the browser
 
 - https://localhost:8000
 
-### Remote
 
-This repo can be deployed on Netlify. The CORS header must be set for API requests and this is not possible on Github Pages.
+## Remote
+
+This repo can be deployed on Netlify. The CORS header must be set for API requests and this is not possible to be set on Github Pages.
+
+UPDATE: This project no longer works on Netlify due to CORS error - due to a change on the API site and not the app or Netlify.
+
 
 ## Source of data
 
