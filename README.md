@@ -1,7 +1,10 @@
 # Netflix Assistant
 > A tool to help search and filter shows and movies on Netflix using the ReelGood API.
 
-ReelGood is a site which provides listing of TV shows and movies across many online services, including Netflix. They have a great GUI on their website which is easy to navigate and they also use an API as part of this. I wanted to build my own show guide reports, so I pull data from their API with client-side JS and render it on a website.
+_Note: This project no longer works on remote environments like Netlify.com but it still works as a local app on localhost._
+
+**ReelGood** is a site which provides listing of TV shows and movies across many online services, including Netflix. They have a great GUI on their website which is easy to navigate and they also use an API as part of this. I wanted to build my own show guide reports, so I pull data from their API with client-side JS and render it on a website.
+
 
 ## Setup and run
 
@@ -9,10 +12,23 @@ ReelGood is a site which provides listing of TV shows and movies across many onl
 
 Clone the repo.
 
+```sh
+$ git clone git@github.com:MichaelCurrin/netflix-assistant.git
+```
 
 Start a web server in the root directory.
 
-Open the browser.
+Use VS Code Live server (auto reloads).
+
+Or the command-line. e.g.
+
+```sh
+python3 -m http.server
+```
+
+Open the browser
+
+- https://localhost:8000
 
 ### Remote
 
