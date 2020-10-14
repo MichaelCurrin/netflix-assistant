@@ -1,3 +1,7 @@
+[build]
+  functions = "my_functions"
+  command = "#"
+
 [[headers]]
   for = "/*"
     [headers.values]
