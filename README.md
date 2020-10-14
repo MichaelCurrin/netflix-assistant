@@ -3,16 +3,29 @@
 
 [ReelGood](https://reelgood.com) is a site which provides listing of TV shows and movies across many online services, including [Netflix](netflix.com/).
 
-ReelGood has a great GUI on their website which is easy to navigate and they also use an API as part of this. I wanted to build my own show guide reports and recommendations list, so I pull data from their API with client-side JS and render it on a website.
+
+## Purpose
+
+ReelGood has a great GUI on their website which is easy to navigate and they also use an API as part of this. I wanted to build my own show guide reports and recommendations list, so I pull data from their API with client-side JS and render it on a website. 
+
+So far it just represents one page of results as text and images using templating - there is no fancy reporting or filtering.
 
 
-## Notice
+## Limitations
 
-Note: This project no longer works on remote environments such Netlify due to CORS errors which were not present on initial development. The error happens despite setting `Access-Control-Allow-Origin` header in [netlify.toml](netlify.toml).
+Note: This project no longer works when deployed on remote environments such as Netlify due to a CORS error. 
+
+This was not present on initial development. It appears that ReelGood added a header to their site to prevent cross-origin requests.
+
+Here is the error message:
+
+> Access to XMLHttpRequest at 'https://api.reelgood.com/v2/browse/source/netflix?sort=4&sources=netflix&take=250' from origin 'https://netflix-assistant.netlify.app' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+
+The error happens even when setting `Access-Control-Allow-Origin` header in [netlify.toml](netlify.toml).
 
 But, this app still works as a local app on localhost. 😄
 
-This can also be rebuilt as a server-side app to avoid the CORS errors in the browser
+This can also be rebuilt as a server-side app to avoid the CORS errors in the browser. Or using a [Netlify Function](https://www.netlify.com/products/functions/).
 
 
 ## Sample
