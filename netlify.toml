@@ -1,4 +1,4 @@
 [[headers]]
   for = "/*"
     [headers.values]
-    Access-Control-Allow-Origin = "https://api.reelgood.com"
+    Access-Control-Allow-Origin = "https://reelgood.com"
