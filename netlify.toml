@@ -1,5 +1,4 @@
 [build]
-  functions = "my_functions"
   command = "#"
 
 [[headers]]
