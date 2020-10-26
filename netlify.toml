@@ -1,8 +1,3 @@
 [build]
   functions = "functions"
   command = "npm install"
-
-[[headers]]
-  for = "/*"
-    [headers.values]
-    Access-Control-Allow-Origin = "https://api.reelgood.com"
