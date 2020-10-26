@@ -7,9 +7,11 @@
 [![GitHub tag](https://img.shields.io/github/tag/MichaelCurrin/netflix-assistant)](https://github.com/MichaelCurrin/netflix-assistant/releases/?include_prereleases&sort=semver)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue)](#license)
 
----
+<div align="center">
 
 [![Site](https://img.shields.io/badge/Site-Netflix_Assistant-green?style=for-the-badge)](https://netflix-assistant.netlify.com/)
+
+</div>
 
 
 ## Purpose
