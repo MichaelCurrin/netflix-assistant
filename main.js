@@ -45,16 +45,20 @@ function parseShow(show) {
 }
 
 function getData(url) {
-    return $.getJSON(url).then(result => result.map(parseShow));
+    const params = { url: url };
+    
+    return $.getJSON(LAMBDA_URL, params)
+        .then(result => result.map(parseShow));
 }
 
 /** Fetch data and add it to the HTML using templating. **/
 function render() {
-    getData(LAMBDA_URL).then(data => {
+    getData(API_QUERY_URL).then(data => {
+        var template = $('#shows').html();
+        
         var content = {
             shows: data
         };
-        var template = $('#shows').html();
         var html = Mustache.to_html(template, content);
         $('#target-output').html(html);
     });
