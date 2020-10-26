@@ -1,5 +1,6 @@
 const API_BASE_URL = 'https://api.reelgood.com/v2',
     API_QUERY_URL = `${API_BASE_URL}/browse/source/netflix?sort=4&sources=netflix&take=250`,
+    LAMBDA_URL = '/.netlify/functions/shows',
     IMG_BASE_URL = 'https://img.reelgood.com/content',
     IMG_PLACEHOLDER_BASE_URL = 'https://via.placeholder.com';
 
@@ -43,13 +44,13 @@ function parseShow(show) {
     };
 }
 
-function getData() {
-    return $.getJSON(API_QUERY_URL).then(result => result.map(parseShow));
+function getData(url) {
+    return $.getJSON(url).then(result => result.map(parseShow));
 }
 
 /** Fetch data and add it to the HTML using templating. **/
 function render() {
-    getData().then(data => {
+    getData(LAMBDA_URL).then(data => {
         var content = {
             shows: data
         };
