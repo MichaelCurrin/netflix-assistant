@@ -2,7 +2,6 @@
 > A tool to help search and filter shows and movies on Netflix using the ReelGood API.
 
 [![GitHub tag](https://img.shields.io/github/tag/MichaelCurrin/netflix-assistant)](https://github.com/MichaelCurrin/netflix-assistant/releases/?include_prereleases&sort=semver)
-
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue)](#license)
 
 
