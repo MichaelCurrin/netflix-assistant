@@ -16,23 +16,6 @@ ReelGood has a great GUI on their website which is easy to navigate and they als
 So far it just represents one page of results as text and images using templating - there is no fancy reporting or filtering.
 
 
-## Limitations
-
-Note: This project no longer works when deployed on remote environments such as Netlify due to a CORS error. 
-
-This was not present on initial development. It appears that ReelGood added a header to their site to prevent cross-origin requests.
-
-Here is the error message:
-
-> Access to XMLHttpRequest at 'https://api.reelgood.com/v2/browse/source/netflix?sort=4&sources=netflix&take=250' from origin 'https://netflix-assistant.netlify.app' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
-
-The error happens even when setting `Access-Control-Allow-Origin` header in [netlify.toml](netlify.toml).
-
-But, this app still works as a local app on localhost. 😄
-
-This can also be rebuilt as a server-side app to avoid the CORS errors in the browser. Or using a [Netlify Function](https://www.netlify.com/products/functions/).
-
-
 ## Sample
 
 <div align="center">
@@ -58,6 +41,8 @@ There are no build or install steps, so contnue.
 ### Run
 
 Start a web server in the root directory.
+
+Update: This project uses a Netify Function now, gives avoids CORS errors on the Netlify site but breaks the localhost experience until an altenative is setup.
 
 Use VS Code Live server (it auto reloads).
 
@@ -94,6 +79,33 @@ The show data is retrieved from the ReelGood API.
 This is done upon initial page load, when you apply filtering/sorting and also when you click _Load More_ at the bottom of the page.
 
 The API is free to use and on their FAQ page they provide details for requesting API access. I found that without having to e-mail them that the API is easy to access. I have not found documentation for it yet, so I compare GUI choice I make with the API requests which are made and infer how the fields on the API requests work and what the response fields mean.
+
+
+## Development
+
+### Limitations
+
+Note: This project no longer works when deployed on remote environments such as Netlify due to a CORS error. 
+
+This was not present on initial development. It appears that ReelGood added a header to their site to prevent cross-origin requests.
+
+Here is the error message:
+
+> Access to XMLHttpRequest at 'https://api.reelgood.com/v2/browse/source/netflix?sort=4&sources=netflix&take=250' from origin 'https://netflix-assistant.netlify.app' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+
+The error happens even when setting `Access-Control-Allow-Origin` header in [netlify.toml](netlify.toml).
+
+But, this app still works as a local app on localhost. 😄
+
+### Lambda
+
+Update! To avoid CORS errors, this project uses a Function aka Lambda on Netlify to request data on the server side and then make the data available on the same domain as the browser request.
+
+See [Netlify Function](https://www.netlify.com/products/functions/).
+
+See also [blog post](https://dev.to/abusedmedia/using-netlify-functions-to-fetch-external-files-1a4b).
+
+A local setup could use a Netlify library or just a fallback to using the original URL (which doesn't give CORS errors on localhost fortunately even though it does on Netlify) based on an flag like `ENV=dev` or local/remote.
 
 
 ## License
