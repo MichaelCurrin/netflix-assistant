@@ -4,6 +4,8 @@
 [![GitHub tag](https://img.shields.io/github/tag/MichaelCurrin/netflix-assistant)](https://github.com/MichaelCurrin/netflix-assistant/releases/?include_prereleases&sort=semver)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue)](#license)
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e5dfdbec-c007-4323-a375-fc01798166e8/deploy-status)](https://app.netlify.com/sites/netflix-assistant/deploys)
+
 
 ## Purpose
 
