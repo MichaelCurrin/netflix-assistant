@@ -1,5 +1,5 @@
 # Netflix Assistant 📺 👀 🌐
-> A tool to help search and filter shows and movies on Netflix using the ReelGood API.
+> A tool to help search and filter shows and movies on Netflix using the ReelGood API
 
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/e5dfdbec-c007-4323-a375-fc01798166e8/deploy-status)](https://app.netlify.com/sites/netflix-assistant/deploys)
@@ -18,7 +18,7 @@
 
 [ReelGood](https://reelgood.com) is a site which provides listing of TV shows and movies across many online services, including [Netflix](netflix.com/).
 
-ReelGood has a great GUI on their website which is easy to navigate and they also use an API as part of this. I wanted to build my own show guide reports and recommendations list, so I pull data from their API with client-side JS and render it on a website. 
+ReelGood has a great GUI on their website which is easy to navigate for searching and filtering. They also use an API as part of this. I wanted to build my own show guide reports and recommendations list, so I pull data from their API with client-side JS and render it on a website. 
 
 So far it just represents one page of results as text and images using templating - there is no fancy reporting or filtering.
 
