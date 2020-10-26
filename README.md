@@ -1,10 +1,11 @@
 # Netflix Assistant 📺 👀 🌐
 > A tool to help search and filter shows and movies on Netflix using the ReelGood API.
 
-[![GitHub tag](https://img.shields.io/github/tag/MichaelCurrin/netflix-assistant)](https://github.com/MichaelCurrin/netflix-assistant/releases/?include_prereleases&sort=semver)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue)](#license)
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/e5dfdbec-c007-4323-a375-fc01798166e8/deploy-status)](https://app.netlify.com/sites/netflix-assistant/deploys)
+
+[![GitHub tag](https://img.shields.io/github/tag/MichaelCurrin/netflix-assistant)](https://github.com/MichaelCurrin/netflix-assistant/releases/?include_prereleases&sort=semver)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue)](#license)
 
 
 ## Purpose
@@ -20,7 +21,7 @@ So far it just represents one page of results as text and images using templatin
 
 <div align="center">
     <a href="https://netflix-assistant.netlify.com">
-        <img src="sample.png" alt="sample" width="600" height="600" />
+        <img src="sample.png" alt="sample" width="350" height="350" />
     </a>
 </div>
 
