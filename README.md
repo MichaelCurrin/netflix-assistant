@@ -1,10 +1,14 @@
 # Netflix Assistant 📺 👀 🌐
 > A tool to help search and filter shows and movies on Netflix using the ReelGood API.
 
-[ReelGood](https://reelgood.com) is a site which provides listing of TV shows and movies across many online services, including [Netflix](netflix.com/).
+[![GitHub tag](https://img.shields.io/github/tag/MichaelCurrin/netflix-assistant)](https://github.com/MichaelCurrin/netflix-assistant/releases/?include_prereleases&sort=semver)
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue)](#license)
 
 
 ## Purpose
+
+[ReelGood](https://reelgood.com) is a site which provides listing of TV shows and movies across many online services, including [Netflix](netflix.com/).
 
 ReelGood has a great GUI on their website which is easy to navigate and they also use an API as part of this. I wanted to build my own show guide reports and recommendations list, so I pull data from their API with client-side JS and render it on a website. 
 
@@ -31,8 +35,9 @@ This can also be rebuilt as a server-side app to avoid the CORS errors in the br
 ## Sample
 
 <div align="center">
-  <img src="sample.png" alt="sample" 
-       width="600" height="600" />
+    <a href="https://netflix-assistant.netlify.com">
+        <img src="sample.png" alt="sample" width="600" height="600" />
+    </a>
 </div>
 
 
@@ -44,6 +49,7 @@ Clone the repo.
 
 ```sh
 $ git clone git@github.com:MichaelCurrin/netflix-assistant.git
+$ cd netflix-assistant
 ```
 
 There are no build or install steps, so contnue.
@@ -65,7 +71,7 @@ Open the browser
 - https://localhost:8000
 
 
-## Remote
+## Remote setup
 
 This repo can be deployed on Netlify. The CORS header must be set for API requests and this is not possible to be set on Github Pages.
 
