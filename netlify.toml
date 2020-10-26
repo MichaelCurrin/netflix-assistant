@@ -1,6 +1,6 @@
 [build]
   functions = "functions"
-  command = "#"
+  command = "npm install"
 
 [[headers]]
   for = "/*"
