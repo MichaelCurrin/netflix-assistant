@@ -1,0 +1,8 @@
+{
+  "name": "netflix-assistant",
+  "author": "Michael Currin",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.18.1
+  }
+}
