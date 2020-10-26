@@ -7,6 +7,10 @@
 [![GitHub tag](https://img.shields.io/github/tag/MichaelCurrin/netflix-assistant)](https://github.com/MichaelCurrin/netflix-assistant/releases/?include_prereleases&sort=semver)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue)](#license)
 
+---
+
+[![Site](https://img.shields.io/badge/Site-Netflix_Assistant-green?style=for-the-badge)](https://netflix-assistant.netlify.com/)
+
 
 ## Purpose
 
@@ -17,11 +21,11 @@ ReelGood has a great GUI on their website which is easy to navigate and they als
 So far it just represents one page of results as text and images using templating - there is no fancy reporting or filtering.
 
 
-## Sample
+## Preview
 
 <div align="center">
     <a href="https://netflix-assistant.netlify.com">
-        <img src="sample.png" alt="sample" width="350" height="350" />
+        <img src="/sample.png" alt="sample screenshot" width="350" />
     </a>
 </div>
 
@@ -50,7 +54,7 @@ Use VS Code Live server (it auto reloads).
 Or the command-line. e.g.
 
 ```sh
-python3 -m http.server
+$ python3 -m http.server
 ```
 
 Open the browser
