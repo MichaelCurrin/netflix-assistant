@@ -20,8 +20,10 @@ exports.handler = async (event) => {
 
   const res = await axios.get(url)
 
+  // Use cache to reduce hits on the external API.
   return {
     statusCode: res.status,
-    body: JSON.stringify(res.data)
+    body: JSON.stringify(res.data),
+    headers: {'Cache-Control': 'public, s-maxage=1800'},
   }
 }
