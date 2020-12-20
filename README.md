@@ -1,15 +1,13 @@
 # Netflix Assistant 📺 👀 🌐
 > A tool to help search and filter shows and movies on Netflix using the ReelGood API
 
-
 [![Netlify Status](https://api.netlify.com/api/v1/badges/e5dfdbec-c007-4323-a375-fc01798166e8/deploy-status)](https://app.netlify.com/sites/netflix-assistant/deploys)
-
 [![GitHub tag](https://img.shields.io/github/tag/MichaelCurrin/netflix-assistant)](https://github.com/MichaelCurrin/netflix-assistant/releases/?include_prereleases&sort=semver)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue)](#license)
 
 <div align="center">
 
-[![Site](https://img.shields.io/badge/Site-Netflix_Assistant-green?style=for-the-badge)](https://netflix-assistant.netlify.com/)
+[![Site](https://img.shields.io/badge/Site-Netflix_Assistant-2ea44f?style=for-the-badge)](https://netflix-assistant.netlify.com/)
 
 </div>
 
@@ -32,7 +30,7 @@ So far it just represents one page of results as text and images using templatin
 </div>
 
 
-## Setup and run locally
+## Installation
 
 ### Clone
 
@@ -43,9 +41,9 @@ $ git clone git@github.com:MichaelCurrin/netflix-assistant.git
 $ cd netflix-assistant
 ```
 
-There are no build or install steps, so contnue.
+There are no build or install steps, so continue.
 
-### Run
+## Usage
 
 Start a web server in the root directory.
 
@@ -64,7 +62,8 @@ Open the browser
 - https://localhost:8000
 
 
-## Remote setup
+## Deploy
+> Remote setup
 
 This repo can be deployed on Netlify. The CORS header must be set for API requests and this is not possible to be set on Github Pages.
 
