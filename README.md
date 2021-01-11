@@ -1,13 +1,13 @@
 # Netflix Assistant 📺 👀 🌐
 > A tool to help search and filter shows and movies on Netflix using the ReelGood API
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/e5dfdbec-c007-4323-a375-fc01798166e8/deploy-status)](https://app.netlify.com/sites/netflix-assistant/deploys)
-[![GitHub tag](https://img.shields.io/github/tag/MichaelCurrin/netflix-assistant)](https://github.com/MichaelCurrin/netflix-assistant/releases/?include_prereleases&sort=semver)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e5dfdbec-c007-4323-a375-fc01798166e8/deploy-status)](https://app.netlify.com/sites/netflix-assistant/deploys "Netlify app deploy status")
+[![GitHub tag](https://img.shields.io/github/tag/MichaelCurrin/netflix-assistant)](https://github.com/MichaelCurrin/netflix-assistant/releases/?include_prereleases&sort=semver "Latest tag")
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue)](#license)
 
 <div align="center">
 
-[![Site](https://img.shields.io/badge/Site-Netflix_Assistant-2ea44f?style=for-the-badge)](https://netflix-assistant.netlify.com/)
+[![Site](https://img.shields.io/badge/View_site-Netflix_Assistant-2ea44f?style=for-the-badge)](https://netflix-assistant.netlify.com/)
 
 </div>
 
@@ -43,21 +43,43 @@ $ cd netflix-assistant
 
 There are no build or install steps, so continue.
 
+
+## Infrastructure
+
+Due to CORS errors caused by the API provider, the app no longer works using browser requests to the ReelGood API. 
+
+It was redesigned to use Netlify's free Functions feature, which is similar to AWS Lambda.
+
+A Function has been defined using a short JS script and this is hosted on Netlify. When a request is done to this endpoint, as request is done to the ReelGood API and the result is returned as a cached JSON response. 
+
+This is much simpler than saying building a Python or Node API, as that needs a lot more code and cannot be hosted on Netlify.
+
+### Using Function endpoin locally
+
+The downside is that the Function only works in the cloud and not on a local server. 
+
+There are some ways around this:
+
+- Setup Python/Node server locally and access it on localhost. You can setup a server using a short script with `http` library maybe and just add an extra line to call the JS script on a certain endpoint - this means you only need one server and one port.
+- Use Netlify CLI (maybe something like [netlify](https://www.npmjs.com/package/netlify) on NPM).
+- Get the the HTML/JS code to run on localhost, but still reference the Netlify app's Function endpoint using a customized URL.
+
+
 ## Usage
+
+Note the local usage is limited - see the the section above.
 
 Start a web server in the root directory.
 
-Update: This project uses a Netify Function now, gives avoids CORS errors on the Netlify site but breaks the localhost experience until an altenative is setup.
+See approaches in this [gist](https://gist.github.com/MichaelCurrin/1a6116a4e0918c8468dc7e1a701a5f95) or use an approach below.
 
-Use VS Code Live server (it auto reloads).
+- Use VS Code's Live Server extension (with auto reloading).
+- Start a Python web server (no auto reloading).
+    ```sh
+    $ python3 -m http.server
+    ```
 
-Or the command-line. e.g.
-
-```sh
-$ python3 -m http.server
-```
-
-Open the browser
+Open in the browser. e.g.
 
 - https://localhost:8000
 
@@ -65,9 +87,9 @@ Open the browser
 ## Deploy
 > Remote setup
 
-This repo can be deployed on Netlify. The CORS header must be set for API requests and this is not possible to be set on Github Pages.
+This repo can be deployed on Netlify for free - as a static website plus Netlify Functions for the serverless backend calls to the external API.
 
-UPDATE: This project no longer works on Netlify due to CORS error - due to a change on the API site and not the app or Netlify.
+The CORS header must be set for API requests and this is not possible to be set on Github Pages.
 
 
 ## Source of data
@@ -105,7 +127,7 @@ But, this app still works as a local app on localhost. 😄
 
 ### Lambda
 
-Update! To avoid CORS errors, this project uses a Function aka Lambda on Netlify to request data on the server side and then make the data available on the same domain as the browser request.
+To avoid CORS errors, this project uses a Function aka Lambda on Netlify to request data on the server side and then make the data available on the same domain as the browser request.
 
 See [Netlify Function](https://www.netlify.com/products/functions/).
 
@@ -116,4 +138,4 @@ A local setup could use a Netlify library or just a fallback to using the origin
 
 ## License
 
-Released under [MIT](/LICENSE).
+Released under [MIT](/LICENSE) by [@MichaelCurrin](https://github.com/MichaelCurrin).
