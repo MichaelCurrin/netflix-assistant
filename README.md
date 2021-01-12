@@ -16,7 +16,7 @@
 
 [ReelGood](https://reelgood.com) is a site which provides listing of TV shows and movies across many online services, including [Netflix](netflix.com/).
 
-ReelGood has a great GUI on their website which is easy to navigate for searching and filtering. They also use an API as part of this. I wanted to build my own show guide reports and recommendations list, so I pull data from their API with client-side JS and render it on a website. 
+ReelGood has a great GUI on their website which is easy to navigate for searching and filtering. They also use an API as part of this. I wanted to build my own show guide reports and recommendations list, so I pull data from their API with client-side JS and render it on a website.
 
 So far it just represents one page of results as text and images using templating - there is no fancy reporting or filtering.
 
@@ -46,17 +46,17 @@ There are no build or install steps, so continue.
 
 ## Infrastructure
 
-Due to CORS errors caused by the API provider, the app no longer works using browser requests to the ReelGood API. 
+Due to CORS errors caused by the API provider, the app no longer works using browser requests to the ReelGood API.
 
 It was redesigned to use Netlify's free Functions feature, which is similar to AWS Lambda.
 
-A Function has been defined using a short JS script and this is hosted on Netlify. When a request is done to this endpoint, as request is done to the ReelGood API and the result is returned as a cached JSON response. 
+A Function has been defined using a short JS script and this is hosted on Netlify. When a request is done to this endpoint, as request is done to the ReelGood API and the result is returned as a cached JSON response.
 
 This is much simpler than saying building a Python or Node API, as that needs a lot more code and cannot be hosted on Netlify.
 
-### Using Function endpoin locally
+### Using Function endpoint locally
 
-The downside is that the Function only works in the cloud and not on a local server. 
+The downside is that the Function only works in the cloud and not on a local server.
 
 There are some ways around this:
 
@@ -111,19 +111,10 @@ The API is free to use and on their FAQ page they provide details for requesting
 
 ## Development
 
-### Limitations
+### Future development
 
-Note: This project no longer works when deployed on remote environments such as Netlify due to a CORS error. 
-
-This was not present on initial development. It appears that ReelGood added a header to their site to prevent cross-origin requests.
-
-Here is the error message:
-
-> Access to XMLHttpRequest at 'https://api.reelgood.com/v2/browse/source/netflix?sort=4&sources=netflix&take=250' from origin 'https://netflix-assistant.netlify.app' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
-
-The error happens even when setting `Access-Control-Allow-Origin` header in [netlify.toml](netlify.toml).
-
-But, this app still works as a local app on localhost. 😄
+- Look at avoiding a mix of `$.getJSON` (frontend) and `axios` (Function) to simplify the project.
+- Do something more interactive (searchable) and useful (page more data and present it better) with the Netflix data.
 
 ### Lambda
 
