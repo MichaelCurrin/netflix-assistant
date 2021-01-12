@@ -1,5 +1,6 @@
 {
   "name": "netflix-assistant",
+  "version": "0.2.0",
   "author": "Michael Currin",
   "license": "MIT",
   "dependencies": {
