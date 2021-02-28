@@ -1,12 +1,12 @@
-const API_BASE_URL = 'https://api.reelgood.com/v2',
+const API_BASE_URL = "https://api.reelgood.com/v2",
   API_QUERY_URL = `${API_BASE_URL}/browse/source/netflix?sort=4&sources=netflix&take=250`,
-  APP_DOMAIN = 'https://netflix-assistant.netlify.app',
+  APP_DOMAIN = "https://netflix-assistant.netlify.app",
   LAMBDA_URL = `${APP_DOMAIN}/.netlify/functions/shows`,
-  IMG_BASE_URL = 'https://img.reelgood.com/content',
-  IMG_PLACEHOLDER_BASE_URL = 'https://via.placeholder.com';
+  IMG_BASE_URL = "https://img.reelgood.com/content",
+  IMG_PLACEHOLDER_BASE_URL = "https://via.placeholder.com";
 
-const TV = 'show',
-  MOVIE = 'movie';
+const TV = "show",
+  MOVIE = "movie";
 
 /** Return URL for poster image or placeholder image. **/
 function makeImageUrl(hasPoster, type, id, large) {
@@ -15,8 +15,7 @@ function makeImageUrl(hasPoster, type, id, large) {
   var url;
   if (hasPoster) {
     url = `${IMG_BASE_URL}/${type}/${id}/poster-${pixels}.webp`;
-  }
-  else {
+  } else {
     url = `${IMG_PLACEHOLDER_BASE_URL}/${pixels}x${pixels * 1.5}?text=No+image`;
   }
 
@@ -25,7 +24,7 @@ function makeImageUrl(hasPoster, type, id, large) {
 
 /** Extract useful fields from a show and also add image URLs. **/
 function parseShow(show) {
-  var isMovie = show.content_type == 'm';
+  var isMovie = show.content_type == "m";
   var type = isMovie ? MOVIE : TV;
   var id = show.id;
   var imgLarge = makeImageUrl(show.has_poster, type, id, true);
@@ -41,26 +40,25 @@ function parseShow(show) {
     overview: show.overview,
     released_on: show.released_on,
     genres: show.genres,
-    season_count: show.season_count
+    season_count: show.season_count,
   };
 }
 
 async function getData(url) {
   const params = { url: url };
 
-  return $.getJSON(LAMBDA_URL, params)
-    .then(result => result.map(parseShow));
+  return $.getJSON(LAMBDA_URL, params).then((result) => result.map(parseShow));
 }
 
 /** Fetch data and add it to the HTML using templating. **/
 function render() {
-  getData(API_QUERY_URL).then(data => {
-    var template = $('#shows').html();
+  getData(API_QUERY_URL).then((data) => {
+    var template = $("#shows").html();
 
     var content = {
-      shows: data
+      shows: data,
     };
     var html = Mustache.to_html(template, content);
-    $('#target-output').html(html);
+    $("#target-output").html(html);
   });
 }
