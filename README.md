@@ -30,6 +30,24 @@ So far it just represents one page of results as text and images using templatin
 </div>
 
 
+## Paths
+
+View the site:
+
+- [netflix-assistant.netlify.app/](https://netflix-assistant.netlify.app/)
+
+Test the JSON API endpoints directly:
+
+- Hello World
+    - Greeting to demonsrate Netlify Functions.
+    - Endpoint: [/.netlify/functions/hello](https://netflix-assistant.netlify.app/.netlify/functions/hello)
+    - Script: [functions/hello.js](/functions/hello.js)
+- Netflix shows
+    - This is queried by the website frontend. This Function fetches data from the ReelGood API and returns it. Caching is set up to reduce resource usage. The query done is limited by could be expanded to be more flexible like taking params and doing paging internnally.
+    - Endpoint: [/.netlify/functions/hello](https://netflix-assistant.netlify.app/.netlify/functions/shows)
+    - Script: [functions/shows.js](/functions/hello.js)
+
+
 ## Installation
 
 ### Clone
@@ -89,7 +107,7 @@ Open in the browser. e.g.
 
 This repo can be deployed on Netlify for free - as a static website plus Netlify Functions for the serverless backend calls to the external API.
 
-The CORS header must be set for API requests and this is not possible to be set on Github Pages.
+The CORS header must be set for API requests and this is not possible to be set on Github Pages. Also, this uses Function on Netlify, which GitHub Pages does not support.
 
 
 ## Source of data
