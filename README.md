@@ -44,8 +44,8 @@ Test the JSON API endpoints directly:
     - Script: [functions/hello.js](/functions/hello.js)
 - Netflix shows
     - This is queried by the website frontend. This Function fetches data from the ReelGood API and returns it. Caching is set up to reduce resource usage. The query done is limited by could be expanded to be more flexible like taking params and doing paging internnally.
-    - Endpoint: [/.netlify/functions/hello](https://netflix-assistant.netlify.app/.netlify/functions/shows)
-    - Script: [functions/shows.js](/functions/hello.js)
+    - Endpoint: [/.netlify/functions/shows](https://netflix-assistant.netlify.app/.netlify/functions/shows)
+    - Script: [functions/shows.js](/functions/shows.js)
 
 
 ## Installation
