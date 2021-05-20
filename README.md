@@ -3,7 +3,10 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/e5dfdbec-c007-4323-a375-fc01798166e8/deploy-status)](https://app.netlify.com/sites/netflix-assistant/deploys "Netlify app deploy status")
 [![GitHub tag](https://img.shields.io/github/tag/MichaelCurrin/netflix-assistant)](https://github.com/MichaelCurrin/netflix-assistant/releases/?include_prereleases&sort=semver "Latest tag")
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue)](#license)
+[![License](https://img.shields.io/badge/License-MIT-blue)](#license)
+
+
+## Web app
 
 <div align="center">
 
@@ -92,7 +95,7 @@ Start a web server in the root directory.
 See approaches in this [gist](https://gist.github.com/MichaelCurrin/1a6116a4e0918c8468dc7e1a701a5f95) or use an approach below.
 
 - Use VS Code's Live Server extension (with auto reloading).
-- Start a Python web server (no auto reloading).
+- Start a Python web server (no auto-reloading).
     ```sh
     $ python3 -m http.server
     ```
