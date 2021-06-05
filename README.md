@@ -17,7 +17,7 @@
 
 ## Purpose
 
-[ReelGood](https://reelgood.com) is a site which provides listing of TV shows and movies across many online services, including [Netflix](netflix.com/).
+[ReelGood](https://reelgood.com) is a service which provides listing of TV shows and movies across many online services, including [Netflix](https://netflix.com/).
 
 ReelGood has a great GUI on their website which is easy to navigate for searching and filtering. They also use an API as part of this. I wanted to build my own show guide reports and recommendations list, so I pull data from their API with client-side JS and render it on a website.
 
@@ -42,11 +42,11 @@ View the site:
 Test the JSON API endpoints directly:
 
 - Hello World
-    - Greeting to demonsrate Netlify Functions.
+    - Greeting to demonstrate Netlify Functions.
     - Endpoint: [/.netlify/functions/hello](https://netflix-assistant.netlify.app/.netlify/functions/hello)
     - Script: [functions/hello.js](/functions/hello.js)
 - Netflix shows
-    - This is queried by the website frontend. This Function fetches data from the ReelGood API and returns it. Caching is set up to reduce resource usage. The query done is limited by could be expanded to be more flexible like taking params and doing paging internnally.
+    - This is queried by the website frontend. This Function fetches data from the ReelGood API and returns it. Caching is set up to reduce resource usage. The query done is limited by could be expanded to be more flexible like taking params and doing paging internally.
     - Endpoint: [/.netlify/functions/shows](https://netflix-assistant.netlify.app/.netlify/functions/shows)
     - Script: [functions/shows.js](/functions/shows.js)
 
