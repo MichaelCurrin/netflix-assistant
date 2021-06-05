@@ -62,7 +62,7 @@ $ git clone git@github.com:MichaelCurrin/netflix-assistant.git
 $ cd netflix-assistant
 ```
 
-There are no build or install steps, so continue.
+There are no build or install steps, so continue below.
 
 
 ## Infrastructure
@@ -90,6 +90,8 @@ There are some ways around this:
 
 Note the local usage is limited - see the the section above.
 
+### Server
+
 Start a web server in the root directory.
 
 See approaches in this [gist](https://gist.github.com/MichaelCurrin/1a6116a4e0918c8468dc7e1a701a5f95) or use an approach below.
@@ -103,6 +105,27 @@ See approaches in this [gist](https://gist.github.com/MichaelCurrin/1a6116a4e091
 Open in the browser. e.g.
 
 - https://localhost:8000
+
+
+### Scraper
+
+There is a basic shell script in this project which uses Bash and cURL to get data from the ReelGood API.
+
+Rather than using an on-demand Function as covered above, this approach is to scrape data from the API and store it as JSON data, which could be left in the deployed app or committed to version control if you care about that. Then the frontend can use that data - which will be much faster because all the paging is already handled. At the cost of slightly stale data and querying a large static JSON file. Some clean-up could be done so that the JSON file only contains fields of interest.
+
+This script gets the first two pages of shows from the API, where the IMDB and ReelGood scores are above 50%. More advanced handling with Python or similar is recommended if you want to page smartly - i.e. substitute in a higher `skip` value, until there are no more pages.
+
+- [scrape/get_shows.sh](/scrape/get_shows.sh)
+
+Run as:
+
+```sh
+$ cd scrape
+$ ./get_shows.sh
+```
+
+Then view the JSON files created in the `out` subdirectory
+
 
 
 ## Deploy
