@@ -1,8 +1,9 @@
+const LAMBDA_URL = "/.netlify/functions/shows";
+     
 const API_BASE_URL = "https://api.reelgood.com/v2",
-  API_QUERY_URL = `${API_BASE_URL}/browse/source/netflix?sort=4&sources=netflix&take=250`,
-  APP_DOMAIN = "https://netflix-assistant.netlify.app",
-  LAMBDA_URL = `${APP_DOMAIN}/.netlify/functions/shows`,
-  IMG_BASE_URL = "https://img.reelgood.com/content",
+  API_QUERY_URL = `${API_BASE_URL}/browse/source/netflix?sort=4&sources=netflix&take=250`;
+
+const IMG_BASE_URL = "https://img.reelgood.com/content",
   IMG_PLACEHOLDER_BASE_URL = "https://via.placeholder.com";
 
 const TV = "show",
@@ -10,9 +11,10 @@ const TV = "show",
 
 /** Return URL for poster image or placeholder image. **/
 function makeImageUrl(hasPoster, type, id, large) {
-  var pixels = large ? 342 : 92;
+  const pixels = large ? 342 : 92;
 
-  var url;
+  let url;
+  
   if (hasPoster) {
     url = `${IMG_BASE_URL}/${type}/${id}/poster-${pixels}.webp`;
   } else {
@@ -22,22 +24,26 @@ function makeImageUrl(hasPoster, type, id, large) {
   return url;
 }
 
-/** Extract useful fields from a show and also add image URLs. **/
+/**
+ * Extract useful fields from a show and also add image URLs.
+ */
 function parseShow(show) {
-  var isMovie = show.content_type == "m";
-  var type = isMovie ? MOVIE : TV;
-  var id = show.id;
-  var imgLarge = makeImageUrl(show.has_poster, type, id, true);
-  var imgSmall = makeImageUrl(show.has_poster, type, id, false);
+  const isMovie = show.content_type == "m";
+  
+  const imgLarge = makeImageUrl(show.has_poster, type, id, true);
+  const imgSmall = makeImageUrl(show.has_poster, type, id, false);
 
   return {
-    id: id,
-    type: type,
+    id: show.id,
+    type: isMovie ? MOVIE : TV,
+    
     image_large: imgLarge,
     image_small: imgSmall,
+    
     slug: show.slug,
     title: show.title,
     overview: show.overview,
+    
     released_on: show.released_on,
     genres: show.genres,
     season_count: show.season_count,
@@ -45,20 +51,23 @@ function parseShow(show) {
 }
 
 async function getData(url) {
-  const params = { url: url };
+  const params = { url };
 
   return $.getJSON(LAMBDA_URL, params).then((result) => result.map(parseShow));
 }
 
-/** Fetch data and add it to the HTML using templating. **/
+/**
+ * Fetch data and add it to the HTML using templating.
+ */
 function render() {
   getData(API_QUERY_URL).then((data) => {
-    var template = $("#shows").html();
+    const template = $("#shows").html();
 
-    var content = {
+    const content = {
       shows: data,
     };
-    var html = Mustache.to_html(template, content);
+    
+    const html = Mustache.to_html(template, content);
     $("#target-output").html(html);
   });
 }
