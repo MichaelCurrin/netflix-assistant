@@ -33,14 +33,17 @@ function makeImageUrl(hasPoster, type, id, large) {
  * Extract useful fields from a show and also add image URLs.
  */
 function parseShow(show) {
+  const id = show.id;
+  
   const isMovie = show.content_type == "m";
+  const type = isMovie ? MOVIE : TV
 
   const imgLarge = makeImageUrl(show.has_poster, type, id, true);
   const imgSmall = makeImageUrl(show.has_poster, type, id, false);
 
   return {
-    id: show.id,
-    type: isMovie ? MOVIE : TV,
+    id,
+    type,
 
     image_large: imgLarge,
     image_small: imgSmall,
