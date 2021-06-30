@@ -1,7 +1,7 @@
 // Since Functions is not set up locally, having the host as the remote supports local development.
 // At the cost of hardcoding this.
 const HOST = "https://netflix-assistant.netlify.com";
-const LAMBDA_URL = "/.netlify/functions/shows";
+const LAMBDA_URL = `${HOST}/.netlify/functions/shows`;
 
 const API_BASE_URL = "https://api.reelgood.com/v2",
   API_QUERY_URL = `${API_BASE_URL}/browse/source/netflix?sort=4&sources=netflix&take=250`;
