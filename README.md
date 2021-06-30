@@ -10,9 +10,20 @@
 
 <div align="center">
 
-[![Site](https://img.shields.io/badge/View_site-Netflix_Assistant-2ea44f?style=for-the-badge)](https://netflix-assistant.netlify.com/)
+[![Site](https://img.shields.io/badge/View_site-Netflix_Assistant-2ea44f?style=for-the-badge)](https://netflix-assistant.netlify.app/)
 
 </div>
+
+
+
+## Preview
+
+<div align="center">
+    <a href="https://netflix-assistant.netlify.app">
+        <img src="/sample.png" alt="sample screenshot" width="350" />
+    </a>
+</div>
+
 
 
 ## Purpose
@@ -24,16 +35,7 @@ ReelGood has a great GUI on their website which is easy to navigate for searchin
 So far it just represents one page of results as text and images using templating - there is no fancy reporting or filtering.
 
 
-## Preview
-
-<div align="center">
-    <a href="https://netflix-assistant.netlify.com">
-        <img src="/sample.png" alt="sample screenshot" width="350" />
-    </a>
-</div>
-
-
-## Paths
+## Usage
 
 View the site:
 
