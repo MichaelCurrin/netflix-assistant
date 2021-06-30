@@ -1,5 +1,7 @@
 // Since Functions is not set up locally, having the host as the remote supports local development.
 // At the cost of hardcoding this.
+// Oh wait, still need cors to be set up at the request point.
+// Or set up Functions locally with Netlify CLI.
 const HOST = "https://netflix-assistant.netlify.com";
 const LAMBDA_URL = `${HOST}/.netlify/functions/shows`;
 
