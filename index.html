@@ -39,10 +39,18 @@
     <script id="shows" type="text/template">
         {{#shows}}
             <ul>
-                <li><strong>Title:</strong> {{ title }}</li>
-                <li><strong>Description:</strong> {{ overview }}</li>
-                <li><strong>Type:</strong> {{ type }}</li>
-                <li><img src="{{ image_small }}"></li>
+                <li>
+                    <strong>Title:</strong> {{ title }}
+                </li>
+                <li>
+                    <strong>Description:</strong> {{ overview }}
+                </li>
+                <li>
+                    <strong>Type:</strong> {{ type }}
+                </li>
+                <li>
+                    <img src="{{ image_small }}" loading="lazy"/>
+                </li>
             </ul>
         {{/shows}}
     </script>
