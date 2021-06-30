@@ -2,7 +2,7 @@
 // At the cost of hardcoding this.
 // Oh wait, still need cors to be set up at the request point.
 // Or set up Functions locally with Netlify CLI.
-const HOST = "https://netflix-assistant.netlify.com";
+const HOST = "https://netflix-assistant.netlify.app";
 const LAMBDA_URL = `${HOST}/.netlify/functions/shows`;
 
 const API_BASE_URL = "https://api.reelgood.com/v2",
