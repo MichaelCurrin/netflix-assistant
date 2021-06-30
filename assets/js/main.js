@@ -1,5 +1,8 @@
+// Since Functions is not set up locally, having the host as the remote supports local development.
+// At the cost of hardcoding this.
+const HOST = "https://netflix-assistant.netlify.com";
 const LAMBDA_URL = "/.netlify/functions/shows";
-     
+
 const API_BASE_URL = "https://api.reelgood.com/v2",
   API_QUERY_URL = `${API_BASE_URL}/browse/source/netflix?sort=4&sources=netflix&take=250`;
 
@@ -14,7 +17,7 @@ function makeImageUrl(hasPoster, type, id, large) {
   const pixels = large ? 342 : 92;
 
   let url;
-  
+
   if (hasPoster) {
     url = `${IMG_BASE_URL}/${type}/${id}/poster-${pixels}.webp`;
   } else {
@@ -29,21 +32,21 @@ function makeImageUrl(hasPoster, type, id, large) {
  */
 function parseShow(show) {
   const isMovie = show.content_type == "m";
-  
+
   const imgLarge = makeImageUrl(show.has_poster, type, id, true);
   const imgSmall = makeImageUrl(show.has_poster, type, id, false);
 
   return {
     id: show.id,
     type: isMovie ? MOVIE : TV,
-    
+
     image_large: imgLarge,
     image_small: imgSmall,
-    
+
     slug: show.slug,
     title: show.title,
     overview: show.overview,
-    
+
     released_on: show.released_on,
     genres: show.genres,
     season_count: show.season_count,
@@ -66,7 +69,7 @@ function render() {
     const content = {
       shows: data,
     };
-    
+
     const html = Mustache.to_html(template, content);
     $("#target-output").html(html);
   });
