@@ -8,7 +8,7 @@ const axios = require("axios");
 
 const API_BASE_URL = "https://api.reelgood.com/v2";
 
-exports.handler = async function(event) {
+exports.handler = async function (event) {
   const url = event.queryStringParameters.url;
 
   if (!url) {
@@ -17,7 +17,7 @@ exports.handler = async function(event) {
       body: "Missing param: 'url'",
     };
   }
-  
+
   if (!API_BASE_URL.startsWith(API_BASE_URL)) {
     return {
       statusCode: 400,
@@ -25,11 +25,11 @@ exports.handler = async function(event) {
     };
   }
 
-  const res = await axios.get(url);
-  
+  const resp = await axios.get(url);
+
   return {
-    statusCode: res.status,
-    body: JSON.stringify(res.data),
+    statusCode: resp.status,
+    body: JSON.stringify(resp.data),
     headers: { "Cache-Control": "public, s-maxage=1800" },
   };
 };
