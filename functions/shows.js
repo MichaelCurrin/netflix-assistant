@@ -7,6 +7,7 @@
 const axios = require("axios");
 
 const API_BASE_URL = "https://api.reelgood.com/v2";
+const HEADERS = { "Cache-Control": "public, s-maxage=1800" }
 
 exports.handler = async function (event) {
   const url = event.queryStringParameters.url;
@@ -30,6 +31,6 @@ exports.handler = async function (event) {
   return {
     statusCode: resp.status,
     body: JSON.stringify(resp.data),
-    headers: { "Cache-Control": "public, s-maxage=1800" },
+    headers: HEADERS,
   };
 };
