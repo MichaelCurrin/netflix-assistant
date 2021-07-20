@@ -34,9 +34,9 @@ function makeImageUrl(hasPoster, type, id, large) {
  */
 function parseShow(show) {
   const id = show.id;
-  
+
   const isMovie = show.content_type == "m";
-  const type = isMovie ? MOVIE : TV
+  const type = isMovie ? MOVIE : TV;
 
   const imgLarge = makeImageUrl(show.has_poster, type, id, true);
   const imgSmall = makeImageUrl(show.has_poster, type, id, false);
