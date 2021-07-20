@@ -41,12 +41,10 @@ View the site:
 
 - [netflix-assistant.netlify.app/](https://netflix-assistant.netlify.app/)
 
-Test the JSON API endpoints directly:
+If you are new to Lambda Functions, see my [Cookbook](https://michaelcurrin.github.io/code-cookbook/recipes/ci-cd/netlify/functions/).
 
-- Hello World
-    - Greeting to demonstrate Netlify Functions.
-    - Endpoint: [/.netlify/functions/hello](https://netflix-assistant.netlify.app/.netlify/functions/hello)
-    - Script: [functions/hello.js](/functions/hello.js)
+Test the JSON API endpoint directly:
+
 - Netflix shows
     - This is queried by the website frontend. This Function fetches data from the ReelGood API and returns it. Caching is set up to reduce resource usage. The query done is limited by could be expanded to be more flexible like taking params and doing paging internally.
     - Endpoint: [/.netlify/functions/shows](https://netflix-assistant.netlify.app/.netlify/functions/shows)
