@@ -1,19 +1,18 @@
 # Netflix Assistant 📺 👀 🌐
-> A tool to help search and filter shows and movies on Netflix using the ReelGood API
+> Search and filter shows and movies on Netflix using the ReelGood API
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/e5dfdbec-c007-4323-a375-fc01798166e8/deploy-status)](https://app.netlify.com/sites/netflix-assistant/deploys "Netlify app deploy status")
 [![GitHub tag](https://img.shields.io/github/tag/MichaelCurrin/netflix-assistant)](https://github.com/MichaelCurrin/netflix-assistant/releases/?include_prereleases&sort=semver "Latest tag")
 [![License](https://img.shields.io/badge/License-MIT-blue)](#license)
 
 
-## Web app
+## Limitations
 
-<div align="center">
+So far this just represents one page of results as text and images using templating.
 
-[![Site](https://img.shields.io/badge/View_site-Netflix_Assistant-2ea44f?style=for-the-badge)](https://netflix-assistant.netlify.app/)
+There is **no** fancy reporting or filtering.
 
-</div>
-
+Also I might rebuild it in Vue.
 
 
 ## Preview
@@ -25,14 +24,20 @@
 </div>
 
 
+## Web app
+
+<div align="center">
+
+[![Site](https://img.shields.io/badge/View_site-Netflix_Assistant-2ea44f?style=for-the-badge)](https://netflix-assistant.netlify.app/)
+
+</div>
+
 
 ## Purpose
 
 [ReelGood](https://reelgood.com) is a service which provides listing of TV shows and movies across many online services, including [Netflix](https://netflix.com/).
 
 ReelGood has a great GUI on their website which is easy to navigate for searching and filtering. They also use an API as part of this. I wanted to build my own show guide reports and recommendations list, so I pull data from their API with client-side JS and render it on a website.
-
-So far it just represents one page of results as text and images using templating - there is no fancy reporting or filtering.
 
 
 ## Usage
@@ -55,14 +60,16 @@ Test the JSON API endpoint directly:
 
 ### Clone
 
-Clone the repo.
+Clone the repo:
 
 ```sh
 $ git clone git@github.com:MichaelCurrin/netflix-assistant.git
 $ cd netflix-assistant
 ```
 
-There are no build or install steps, so continue below.
+There are no build or install steps!
+
+Continue below.
 
 
 ## Infrastructure
