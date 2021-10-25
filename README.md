@@ -44,9 +44,9 @@ ReelGood has a great GUI on their website which is easy to navigate for searchin
 
 View the site:
 
-- [netflix-assistant.netlify.app/](https://netflix-assistant.netlify.app/)
+- [netflix-assistant.netlify.app](https://netflix-assistant.netlify.app/)
 
-If you are new to Lambda Functions, see my [Cookbook](https://michaelcurrin.github.io/code-cookbook/recipes/ci-cd/netlify/functions/).
+If you are new to Netlify / Lambda Functions, see my [Cookbook](https://michaelcurrin.github.io/code-cookbook/recipes/ci-cd/netlify/functions/).
 
 Test the JSON API endpoint directly:
 
