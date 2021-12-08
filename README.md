@@ -5,10 +5,16 @@
 [![GitHub tag](https://img.shields.io/github/tag/MichaelCurrin/netflix-assistant)](https://github.com/MichaelCurrin/netflix-assistant/releases/?include_prereleases&sort=semver "Latest tag")
 [![License](https://img.shields.io/badge/License-MIT-blue)](#license)
 
+Made with:
+
+- Netflify Functions
+- ReelGood API
+- [mustache.js](https://github.com/janl/mustache.js)
+
 
 ## Limitations
 
-So far this just represents one page of results as text and images using templating.
+So far this projecy just represents one page of API results as text and images, using templating.
 
 There is **no** fancy reporting or filtering.
 
