@@ -7,18 +7,18 @@
 
 Made with:
 
-- Netflify Functions
-- ReelGood API
-- [mustache.js](https://github.com/janl/mustache.js)
+- [Netflify Functions](https://michaelcurrin.github.io/dev-resources/resources/ci-cd/netlify/functions.html)
+- ReelGood API (because the Netlify API is not accessible)
+- [mustache.js](https://github.com/janl/mustache.js) NPM package
 
 
 ## Limitations
 
-So far this projecy just represents one page of API results as text and images, using templating.
+So far this project just represents a _single_ page of API results as text and images, using templating.
 
 There is **no** fancy reporting or filtering.
 
-Also I might rebuild it in Vue.
+Also I might rebuild this in Vue, instead of Mustache.
 
 
 ## Preview
