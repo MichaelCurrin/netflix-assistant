@@ -79,12 +79,13 @@ Continue below.
 
 
 ## Infrastructure
+> Using Serverless to API requests
 
-Due to CORS errors caused by the API provider, the app no longer works using browser requests to the ReelGood API.
+This app cannot do browser requests directly ReelGood API (locally this is okay but on the deployed site you get an error). The API change dso there are CORS errors.
 
-It was redesigned to use Netlify's free Functions feature, which is similar to AWS Lambda.
+So this app redesigned to use Netlify's free _Functions_ feature (built on AWS Lambda).
 
-A Function has been defined using a short JS script and this is hosted on Netlify. When a request is done to this endpoint, as request is done to the ReelGood API and the result is returned as a cached JSON response.
+A Function is defined using a short JS script and this is hosted on Netlify. When a request is done to this Function's endpoint, a request is done to the ReelGood API and the result is returned as a cached JSON response.
 
 This is much simpler than saying building a Python or Node API, as that needs a lot more code and cannot be hosted on Netlify.
 
