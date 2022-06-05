@@ -12,6 +12,13 @@ Made with:
 - [mustache.js](https://github.com/janl/mustache.js) NPM package
 
 
+## Error
+
+This app is currently broken - ReelGood migrated to using V3 API on their site and the V2 API no longer works. If you want to figure out how the new API endpoints can be used and contribute a PR, please do.
+
+See issue [#5](https://github.com/MichaelCurrin/netflix-assistant/issues/5).
+
+
 ## Limitations
 
 So far this project just represents a _single_ page of API results as text and images, using templating.
